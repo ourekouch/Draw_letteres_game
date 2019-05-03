@@ -1,5 +1,6 @@
 package com.example.rick.dummygame.State;
 
+import android.os.Bundle;
 import android.provider.MediaStore;
 
 import com.example.emobadaragaminglib.Base.Graphics;
@@ -24,19 +25,36 @@ public class MainActivity extends AndroidGame {
         //It is better to have all of them loaded, until you have performance problems then, umm,yeah
         //We will have to figure that out :')
         List lettres = new ArrayList();
-        lettres.add(getGraphics().newImage(R.drawable.p_0,Graphics.ImageFormat.ARGB8888,getResources()));
+        Bundle b = getIntent().getExtras();
+        String value = new String(); // or other values
+        if(b != null)
+            value = b.getString("lettre");
+        int identifier = getResources().getIdentifier(value, "drawable", getPackageName());
+        lettres.add(getGraphics().newImage(identifier,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_1", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_1,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_2", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_2,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_3", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_3,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_4", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_4,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_5", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_5,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_6", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_6,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_7", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_7,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_8", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_8,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_9", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_9,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_10", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_10,Graphics.ImageFormat.ARGB8888,getResources()));
+        //identifier = getResources().getIdentifier(value+"_11", "drawable", getPackageName());
         lettres.add(getGraphics().newImage(R.drawable.p_11,Graphics.ImageFormat.ARGB8888,getResources()));
         MyLettre.setLettres(lettres);
+        MyLettre.choix=value;
         MyLettre.voice = (AndroidSound) getAudio().createSound(R.raw.tinyrick);
         Obstacles.avatar = getGraphics().newImage(R.drawable.white,Graphics.ImageFormat.ARGB8888,getResources());
         Obstacles.voice = (AndroidSound) getAudio().createSound(R.raw.morty);

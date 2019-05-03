@@ -23,11 +23,15 @@ public class choisir_lettre extends AppCompatActivity {
         for(int i=0; i<26;i++){
             int identifier = getResources().getIdentifier(alpha[i], "id", getPackageName());
             lettres[i] = findViewById(identifier);
+            final String mylettre = alpha[i];
             lettres[i].setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
                 Intent intent = new Intent(choisir_lettre.this,MainActivity.class);
+                Bundle b = new Bundle();
+                b.putString("lettre", mylettre); //Your id
+                    intent.putExtras(b); //Put your id to your next Intent
                 startActivity(intent);
                 }
             });}

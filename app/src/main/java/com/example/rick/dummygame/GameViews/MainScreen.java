@@ -40,21 +40,442 @@ public class MainScreen extends Screen {
     private int[][] places;
     private int myHack = 0; //used to get some time before re-rendering
     int errors = 0;
+    public int [] move (int x , int y,int mouvement ,int pas ){
+        /*       1
+              16    9
+             8        2
+           15           10
+         7       .         3
+           14           11
+             6        4
+               13   12
+                  5
+        */
+        int[] arrive  = new int [2];
+        int dx = (int)(game.getScreenHeight()/170); /* 100 pour 1776 x 1080 */
+        int dy =(int)(game.getScreenWidth()/100);  /*100  pour 1776 x 1080 */
+        switch (mouvement){
+            case 1 :
+                arrive[0]=(int)x;
+                arrive[1]=(int)y-pas*dy;
+                break;
+            case 2 :
+                arrive[0]=(int)x+pas*(dx/2);
+                arrive[1]=(int)y-pas*(dy/2);
+                break;
+            case 3 :
+                arrive[0]=(int)x+pas*dx;
+                arrive[1]=(int)y;
+                break;
+            case 4 :
+                arrive[0]=(int)x+pas*(dx/2);
+                arrive[1]=(int)y+pas*(dy/2);
+                break;
+            case 5 :
+                arrive[0]=(int)x;
+                arrive[1]=(int)y+pas*dy;
+                break;
+            case 6 :
+                arrive[0]=(int)x-pas*(dx/2);
+                arrive[1]=(int)y+pas*(dy/2);
+                break;
+            case 7 :
+                arrive[0]=(int)x-pas*dx;
+                arrive[1]=(int)y;
+                break;
+            case 8 :
+                arrive[0]=(int)x-pas*(dx/2);
+                arrive[1]=(int)y-pas*(dy/2);
+                break;
+            case 9 :
+                arrive[0]=(int)x+pas*(dx/3);
+                arrive[1]=(int)y-pas*(2*dy/3);
+                break;
+            case 10 :
+                arrive[0]=(int)x+pas*(2*dx/3);
+                arrive[1]=(int)y-pas*(dy/3);
+                break;
+            case 11 :
+                arrive[0]=(int)x+pas*(2*dx/3);
+                arrive[1]=(int)y+pas*(dy/3);
+                break;
+            case 12 :
+                arrive[0]=(int)x+pas*(dx/3);
+                arrive[1]=(int)y+pas*(2*dy/3);
+                break;
+            case 13 :
+                arrive[0]=(int)x-pas*(dx/3);
+                arrive[1]=(int)y+pas*(2*dy/3);
+                break;
+            case 14 :
+                arrive[0]=(int)x-pas*(2*dx/3);
+                arrive[1]=(int)y+pas*(dy/3);
+                break;
+            case 15 :
+                arrive[0]=(int)x-pas*(2*dx/3);
+                arrive[1]=(int)y-pas*(dy/3);
+                break;
+            case 16 :
+                arrive[0]=(int)x-pas*(dx/3);
+                arrive[1]=(int)y-pas*(2*dy/3);
+                break;
+        }
+        System.out.println(dx);
+        System.out.println(dy);
+        return arrive;
+
+    }
     public int[][] getparcour( String lettre) {
-        int [][] places=new int[10][2];
-        places[0][0]=402; places[0][1]=1225;
-        places[1][0]=402; places[1][1]=1080;
-        places[2][0]=402; places[2][1]=940;
-        places[3][0]=402; places[3][1]=780;
-        places[4][0]=402; places[4][1]=638;
-        places[5][0]=670; places[5][1]=638;
-        places[6][0]=780; places[6][1]=722;
-        places[7][0]=780; places[7][1]=870;
-        places[8][0]=640; places[8][1]=940;
-        places[9][0]=450;places[9][1]=940;
+        int[][] places = new int[10][2];
+        int offset = (int)game.getScreenHeight()/10;
+        switch (lettre) {
+            case "p" : // "p"
+                places[0][0] = game.getScreenWidth() / 3;
+                places[0][1] = game.getScreenHeight() / 8 +( game.getScreenHeight()/2) - offset - offset/4;
+                places[1] = move(places[0][0], places[0][1], 1, 15);
+                places[2] = move(places[1][0], places[1][1], 1, 15);
+                places[3] = move(places[2][0], places[2][1], 1, 15);
+                places[4] = move(places[3][0], places[3][1], 1, 15);
+                places[5] = move(places[4][0], places[4][1], 3, 30);
+                places[6] = move(places[5][0], places[5][1], 4, 25);
+                places[7] = move(places[6][0], places[6][1], 5, 10);
+                places[8] = move(places[7][0], places[7][1], 6, 20);
+                places[9] = move(places[8][0], places[8][1], 7, 15);
+                break;
+            case "a":
+                places[0][0] = game.getScreenWidth() / 3 - offset/2 - offset/4;
+                places[0][1] = game.getScreenHeight() / 8 +( game.getScreenHeight()/2) - offset;
+                places[1] = move(places[0][0], places[0][1], 9, 35);
+                places[2] = move(places[1][0], places[1][1], 9, 35);
+                places[3] = move(places[2][0], places[2][1], 9, 35);
+                places[4] = move(places[3][0], places[3][1], 12, 35);
+                places[5] = move(places[4][0], places[4][1], 12, 35);
+                places[6] = move(places[5][0], places[5][1], 12, 35);
+                places[7] = move(places[1][0], places[1][1], 3, 5);
+                places[8] = move(places[7][0], places[7][1], 3, 15);
+                places[9] = move(places[8][0], places[8][1], 3, 15);
+                break;
+            case "b":
+                places[2][0] = game.getScreenWidth() / 3 -offset/4;
+                places[2][1] = game.getScreenHeight() / 8 +( game.getScreenHeight()/2) - offset -offset/6;
+                places[1] = move(places[2][0], places[2][1], 1, 30);
+                places[0] = move(places[1][0], places[1][1], 1, 30);
+                places[3] = move(places[0][0], places[0][1], 3, 25);
+                places[4] = move(places[3][0], places[3][1], 11, 30);
+                places[5] = move(places[4][0], places[4][1], 13, 35);
+                places[6] = move(places[5][0], places[5][1], 7, 20);
+                places[7] = move(places[5][0], places[5][1], 4, 30);
+                places[8] = move(places[7][0], places[7][1], 13, 30);
+                places[9] = move(places[8][0], places[8][1], 7, 20);
+                break;
+            case "c":
+                places[0][0] = 2*game.getScreenWidth() / 3 + 3*offset/4;
+                places[0][1] = 2*game.getScreenHeight() / 8 -offset/8;
+                places[1] = move(places[0][0], places[0][1], 8, 25);
+                places[2] = move(places[1][0], places[1][1], 7, 25);
+                places[3] = move(places[2][0], places[2][1], 6, 30);
+                places[4] = move(places[3][0], places[3][1], 5, 15);
+                places[5] = move(places[4][0], places[4][1], 5, 15);
+                places[6] = move(places[5][0], places[5][1], 4, 20);
+                places[7] = move(places[6][0], places[6][1], 11, 30);
+                places[8] = move(places[7][0], places[7][1], 10, 25);
+                places[9] = move(places[8][0], places[8][1], 2, 20);
+                break;
+            case "d":
+                places[0][0] = game.getScreenWidth() / 3  - offset/3;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 20);
+                places[2] = move(places[1][0], places[1][1], 5, 20);
+                places[3] = move(places[2][0], places[2][1], 5, 20);
+                places[4] = move(places[0][0], places[0][1], 3, 25);
+                places[5] = move(places[4][0], places[4][1], 11, 35);
+                places[6] = move(places[5][0], places[5][1], 12, 35);
+                places[7] = move(places[6][0], places[6][1], 13, 37);
+                places[8] = move(places[7][0], places[7][1], 14, 25);
+                places[9] = move(places[8][0], places[8][1], 7, 15);
+                break;
+            case "e":
+                places[0][0] = game.getScreenWidth() / 3  - offset/4;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 15);
+                places[2] = move(places[1][0], places[1][1], 5, 15);
+                places[3] = move(places[2][0], places[2][1], 5, 34);
+                places[4] = move(places[0][0], places[0][1], 3, 25);
+                places[5] = move(places[4][0], places[4][1], 3, 22);
+                places[6] = move(places[2][0], places[2][1], 3, 25);
+                places[7] = move(places[6][0], places[6][1], 3, 22);
+                places[8] = move(places[3][0], places[3][1], 3, 25);
+                places[9] = move(places[8][0], places[8][1], 3, 22);
+                break;
+            case "f":
+                places[0][0] = game.getScreenWidth() / 3  ;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 15);
+                places[2] = move(places[1][0], places[1][1], 5, 15);
+                places[3] = move(places[2][0], places[2][1], 5, 10);
+                places[4] = move(places[3][0], places[3][1], 5, 10);
+                places[5] = move(places[4][0], places[4][1], 5, 10);
+                places[6] = move(places[0][0], places[0][1], 3, 15);
+                places[7] = move(places[6][0], places[6][1], 3, 20);
+                places[8] = move(places[2][0], places[2][1], 3, 15);
+                places[9] = move(places[8][0], places[8][1], 3, 15);
+                break;
+            case "g":
+                places[0][0] = 2*game.getScreenWidth() / 3 + 3*offset/4;
+                places[0][1] = 2*game.getScreenHeight() / 8 -offset/8;
+                places[1] = move(places[0][0], places[0][1], 8, 25);
+                places[2] = move(places[1][0], places[1][1], 7, 25);
+                places[3] = move(places[2][0], places[2][1], 6, 30);
+                places[4] = move(places[3][0], places[3][1], 5, 30);
+                places[5] = move(places[4][0], places[4][1], 4, 35);
+                places[6] = move(places[5][0], places[5][1], 3, 18);
+                places[7] = move(places[6][0], places[6][1], 10, 27);
+                places[8] = move(places[7][0], places[7][1], 1, 20);
+                places[9] = move(places[8][0], places[8][1], 7, 18);
+                break;
+            case "h":
+                places[0][0] = game.getScreenWidth() / 3  - offset /3;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 30);
+                places[2] = move(places[1][0], places[1][1], 5, 30);
+                places[3][0] = 2*places[0][0] + offset;
+                places[3][1] =  places[0][1];
+                places[4] = move(places[3][0], places[3][1], 5, 30);
+                places[5] = move(places[4][0], places[4][1], 5, 30);
+                places[6] = move(places[1][0], places[1][1], 3, 10);
+                places[7] = move(places[6][0], places[6][1], 3, 10);
+                places[8] = move(places[7][0], places[7][1], 3, 10);
+                places[9] = move(places[8][0], places[8][1], 3, 10);
+                break;
+            case "i":
+                places[0][0] = 2*game.getScreenWidth() / 4  ;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 7);
+                places[2] = move(places[1][0], places[1][1], 5, 7);
+                places[3] = move(places[2][0], places[2][1], 5, 7);
+                places[4] = move(places[3][0], places[3][1], 5, 7);
+                places[5] = move(places[4][0], places[4][1], 5, 7);
+                places[6] = move(places[5][0], places[5][1], 5, 7);
+                places[7] = move(places[6][0], places[6][1], 5, 7);
+                places[8] = move(places[7][0], places[7][1], 5, 7);
+                places[9] = move(places[8][0], places[8][1], 5, 7);
+                break;
+            case "j":
+                places[0][0] = 2*game.getScreenWidth() / 3  ;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 10);
+                places[2] = move(places[1][0], places[1][1], 5, 10);
+                places[3] = move(places[2][0], places[2][1], 5, 10);
+                places[4] = move(places[3][0], places[3][1], 5, 10);
+                places[5] = move(places[4][0], places[4][1], 5, 10);
+                places[6] = move(places[5][0], places[5][1], 5, 8);
+                places[7] = move(places[6][0], places[6][1], 14, 15);
+                places[8] = move(places[7][0], places[7][1], 7, 18);
+                places[9] = move(places[8][0], places[8][1], 16, 28);
+                break;
+            case "k":
+                places[0][0] = game.getScreenWidth() / 3  -offset/3;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 20);
+                places[2] = move(places[1][0], places[1][1], 5, 20);
+                places[3] = move(places[2][0], places[2][1], 5, 20);
+                places[4][0] = 2*places[0][0] +2*offset/3;
+                places[4][1] = places[0][1];
+                places[5] = move(places[4][0], places[4][1], 6, 30);
+                places[6] = move(places[5][0], places[5][1], 6, 30);
+                places[7] = move(places[5][0], places[5][1], 5, 20);
+                places[8] = move(places[7][0], places[7][1], 4, 20);
+                places[9] = move(places[8][0], places[8][1], 12, 25);
+                break;
+            case "l":
+                places[0][0] = game.getScreenWidth() / 3  ;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 10);
+                places[2] = move(places[1][0], places[1][1], 5, 10);
+                places[3] = move(places[2][0], places[2][1], 5, 10);
+                places[4] = move(places[3][0], places[3][1], 5, 10);
+                places[5] = move(places[4][0], places[4][1], 5, 10);
+                places[6] = move(places[5][0], places[5][1], 5, 15);
+                places[7] = move(places[6][0], places[6][1], 3, 13);
+                places[8] = move(places[7][0], places[7][1], 3, 13);
+                places[9] = move(places[8][0], places[8][1], 3, 13);
+                break;
+            case "m":
+                places[0][0] = game.getScreenWidth() / 3 -2*offset/3 ;
+                places[0][1] = game.getScreenHeight() / 8 +( game.getScreenHeight()/2) - offset - offset/4;
+                places[1] = move(places[0][0], places[0][1], 1, 30);
+                places[2] = move(places[1][0], places[1][1], 1, 30);
+                places[3] = move(places[2][0], places[2][1], 4, 20);
+                places[4] = move(places[3][0], places[3][1], 12, 30);
+                places[5] = move(places[4][0], places[4][1], 12, 40);
+                places[6] = move(places[5][0], places[5][1], 9, 43);
+                places[7] = move(places[6][0], places[6][1], 9, 45);
+                places[8] = move(places[7][0], places[7][1], 5, 30);
+                places[9] = move(places[8][0], places[8][1], 5, 30);
+                break;
+            case "n":
+                places[0][0] = game.getScreenWidth() / 3  -offset/3;
+                places[0][1] = game.getScreenHeight() / 8 +( game.getScreenHeight()/2) - offset - offset/4;
+                places[1] = move(places[0][0], places[0][1], 1, 20);
+                places[2] = move(places[1][0], places[1][1], 1, 20);
+                places[3] = move(places[2][0], places[2][1], 1, 20);
+                places[4] = move(places[3][0], places[3][1], 4, 38);
+                places[5] = move(places[4][0], places[4][1], 12, 38);
+                places[6] = move(places[5][0], places[5][1], 4, 35);
+                places[7] = move(places[6][0], places[6][1], 1, 20);
+                places[8] = move(places[7][0], places[7][1], 1, 20);
+                places[9] = move(places[8][0], places[8][1], 1, 20);
+                break;
+            case "o":
+                places[0][0] = game.getScreenWidth() / 2 ;
+                places[0][1] = 2*game.getScreenHeight() / 8 - offset;
+                places[1] = move(places[0][0], places[0][1], 14, 30);
+                places[2] = move(places[1][0], places[1][1], 6, 20);
+                places[3] = move(places[2][0], places[2][1], 5, 20);
+                places[4] = move(places[3][0], places[3][1], 12, 25);
+                places[5] = move(places[4][0], places[4][1], 4, 23);
+                places[6] = move(places[5][0], places[5][1], 3, 23);
+                places[7] = move(places[6][0], places[6][1], 2, 26);
+                places[8] = move(places[7][0], places[7][1], 1, 25);
+                places[9] = move(places[8][0], places[8][1], 16, 30);
+                break;
+            case "q":
+                places[0][0] = game.getScreenWidth() / 2 ;
+                places[0][1] = 2*game.getScreenHeight() / 8 - offset;
+                places[1] = move(places[0][0], places[0][1], 14, 45);
+                places[2] = move(places[1][0], places[1][1], 5, 20);
+                places[3] = move(places[2][0], places[2][1], 12, 40);
+                places[4] = move(places[3][0], places[3][1], 3, 30);
+                places[5] = move(places[4][0], places[4][1], 2, 30);
+                places[6] = move(places[5][0], places[5][1], 1, 25);
+                places[7] = move(places[6][0], places[6][1], 8, 20);
+                places[8] = move(places[4][0], places[4][1], 15, 20);
+                places[9] = move(places[4][0], places[4][1], 11, 20);
+                break;
+            case "r" : // "r"
+                places[0][0] = game.getScreenWidth() / 3 - offset/3;
+                places[0][1] = game.getScreenHeight() / 8 +( game.getScreenHeight()/2) - offset - offset/4;
+                places[1] = move(places[0][0], places[0][1], 1, 30);
+                places[2] = move(places[1][0], places[1][1], 1, 30);
+                places[3] = move(places[2][0], places[2][1], 3, 25);
+                places[4] = move(places[3][0], places[3][1], 11, 35);
+                places[5] = move(places[4][0], places[4][1], 5, 10);
+                places[6] = move(places[5][0], places[5][1], 6, 20);
+                places[7] = move(places[6][0], places[6][1], 7, 15);
+                places[8] = move(places[7][0], places[7][1], 4, 35);
+                places[9] = move(places[8][0], places[8][1], 12, 25);
+                break;
+            case "s":
+                places[0][0] = 2*game.getScreenWidth() / 3 + offset/4;
+                places[0][1] = 2*game.getScreenHeight() / 8 -2*offset/8;
+                places[1] = move(places[0][0], places[0][1], 8, 25);
+                places[2] = move(places[1][0], places[1][1], 7, 25);
+                places[3] = move(places[2][0], places[2][1], 13, 25);
+                places[4] = move(places[3][0], places[3][1], 4, 20);
+                places[5] = move(places[4][0], places[4][1], 11, 30);
+                places[6] = move(places[5][0], places[5][1], 11, 30);
+                places[7] = move(places[6][0], places[6][1], 5, 15);
+                places[8] = move(places[7][0], places[7][1], 14, 32);
+                places[9] = move(places[8][0], places[8][1], 15, 40);
+                break;
+            case "t":
+                places[0][0] = 2*game.getScreenWidth() / 4  ;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 13);
+                places[2] = move(places[1][0], places[1][1], 5, 13);
+                places[3] = move(places[2][0], places[2][1], 5, 13);
+                places[4] = move(places[3][0], places[3][1], 5, 13);
+                places[5] = move(places[4][0], places[4][1], 5, 13);
+                places[6][0] = game.getScreenWidth() / 3  - offset/4;
+                places[6][1] = game.getScreenHeight() / 8 + offset/3;
+                places[7] = move(places[6][0], places[6][1], 3, 15);
+                places[8] = move(places[7][0], places[7][1], 3, 15);
+                places[9] = move(places[8][0], places[8][1], 3, 15);
+                break;
+            case "u":
+                places[0][0] = game.getScreenWidth() / 3  - offset/4;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 5, 17);
+                places[2] = move(places[1][0], places[1][1], 5, 17);
+                places[3] = move(places[2][0], places[2][1], 5, 17);
+                places[4] = move(places[3][0], places[3][1], 4, 28);
+                places[5] = move(places[4][0], places[4][1], 3, 20);
+                places[6] = move(places[5][0], places[5][1], 2, 28);
+                places[7] = move(places[6][0], places[6][1], 1 ,17);
+                places[8] = move(places[7][0], places[7][1], 1, 17);
+                places[9] = move(places[8][0], places[8][1], 1, 17);
+                break;
+            case "v":
+                places[0][0] = game.getScreenWidth() / 3  - offset/4;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 12, 25);
+                places[2] = move(places[1][0], places[1][1], 5, 14);
+                places[3] = move(places[2][0], places[2][1], 12, 25);
+                places[4] = move(places[3][0], places[3][1], 12, 30);
+                places[5] = move(places[4][0], places[4][1], 9, 15);
+                places[6] = move(places[5][0], places[5][1], 9, 20);
+                places[7] = move(places[6][0], places[6][1], 9, 20);
+                places[8] = move(places[7][0], places[7][1], 9, 20);
+                places[9] = move(places[8][0], places[8][1], 9, 20);
+                break;
+            case "w":
+                places[0][0] = game.getScreenWidth() / 3  - offset;
+                places[0][1] = game.getScreenHeight() / 8 + offset;
+                places[1] = move(places[0][0], places[0][1], 12, 33);
+                places[2] = move(places[1][0], places[1][1], 12, 33);
+                places[3] = move(places[2][0], places[2][1], 9, 33);
+                places[4] = move(places[3][0], places[3][1], 9, 33);
+                places[5] = move(places[4][0], places[4][1], 12, 33);
+                places[6] = move(places[5][0], places[5][1], 12, 28);
+                places[7] = move(places[6][0], places[6][1], 9, 20);
+                places[8] = move(places[7][0], places[7][1], 9, 20);
+                places[9] = move(places[8][0], places[8][1], 1, 15);
+                break;
+            case "x":
+                places[0][0] = game.getScreenWidth() / 3  - offset /3;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 4, 30);
+                places[2] = move(places[1][0], places[1][1], 4, 30);
+                places[3] = move(places[2][0], places[2][1], 12, 30);
+                places[4] = move(places[3][0], places[3][1], 12, 30);
+                places[5][0] = 2*places[0][0] + offset;
+                places[5][1] =  places[0][1];
+                places[6] = move(places[5][0], places[5][1], 6, 30);
+                places[7] = move(places[6][0], places[6][1], 6, 30);
+                places[8] = move(places[7][0], places[7][1], 13, 30);
+                places[9] = move(places[8][0], places[8][1], 13, 30);
+                break;
+            case "y":
+                places[0][0] = game.getScreenWidth() / 3  - offset /3;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 12, 30);
+                places[2] = move(places[1][0], places[1][1], 4, 25);
+                places[3][0] = 2*places[0][0] + offset;
+                places[3][1] =  places[0][1];
+                places[4] = move(places[3][0], places[3][1], 13, 30);
+                places[5] = move(places[4][0], places[4][1], 6, 25);
+                places[6] = move(places[5][0], places[5][1], 5, 10);
+                places[7] = move(places[6][0], places[6][1], 5, 10);
+                places[8] = move(places[7][0], places[7][1], 5, 7);
+                places[9] = move(places[8][0], places[8][1], 5, 7);
+                break;
+            case "z":
+                places[0][0] = game.getScreenWidth() / 3  - offset /3;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 3, 20);
+                places[2] = move(places[1][0], places[1][1], 3, 15);
+                places[3] = move(places[2][0], places[2][1], 3, 15);
+                places[4] = move(places[3][0], places[3][1], 6, 40);
+                places[5] = move(places[4][0], places[4][1], 6, 40);
+                places[6] = move(places[5][0], places[5][1], 13, 40);
+                places[7] = move(places[6][0], places[6][1], 3, 20);
+                places[8] = move(places[7][0], places[7][1], 3, 15);
+                places[9] = move(places[8][0], places[8][1], 3, 15);
+                break;
+
+        }
         return places;
     }
-
     public MainScreen(Game game) {
         //This is gonna handle other stuff for you under the hood.We will see more of that next time.
         super(game);
@@ -63,7 +484,7 @@ public class MainScreen extends Screen {
         //rick = new Rick(game,Hero.avatar,game.getScreenHeight()/2,game.getScreenWidth()/2,100,100);
         //morty = new Morty(game,Obstacles.avatar,mX,mY,100,100);
         Bckg = new valider(game, drawing.background, 0, 0, game.getScreenHeight(), game.getScreenWidth());
-        lettre = new pen(game, (Image)MyLettre.lettres.get(0), game.getScreenHeight() / 8, game.getScreenWidth() / 2, 800, 800);
+        lettre = new pen(game, (Image)MyLettre.lettres.get(0), game.getScreenWidth() / 6 , game.getScreenHeight() / 8, game.getScreenHeight()/2, game.getScreenHeight()/2);
         //Now that everything is good let's add the Sprite to the list that we have.
         //addSprite(rick);
         //addSprite(morty);
@@ -73,15 +494,15 @@ public class MainScreen extends Screen {
         addSprite(Validate);
         Reset = new valider(game, drawing.reset, (game.getScreenWidth() / 9) * 6, (game.getScreenHeight() / 6) * 5, 250, 250);
         addSprite(Reset);
-        putcheckpoints();
+        putcheckpoints(MyLettre.choix);
         Log.d(TAG, "Constructor Called");
 
     }
-    private void putcheckpoints(){
+    private void putcheckpoints(String lettre){
         ch = new chemin[10];
-        places=getparcour("p");
+        places=getparcour(lettre);
         for(int i =0;i<10;i++){
-                ch[i] = new chemin(game,drawing.no_color, places[i][0],places[i][1], 120, 120);
+                ch[i] = new chemin(game,drawing.check, places[i][0],places[i][1], 150, 150);
                 addSprite(ch[i]);
         }
     }
