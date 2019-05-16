@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".State.MainActivity">
+    tools:context=".State.MainAppActivity">
 
     <com.example.rick.dummygame.GameViews.PaintView
         android:id="@+id/paintView"

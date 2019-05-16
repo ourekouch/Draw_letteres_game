@@ -1,8 +1,10 @@
 package com.example.rick.dummygame.State;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
+import com.e_mobadara.audiomanaging.moblibAudioFileManager;
 import com.example.emobadaragaminglib.Base.Graphics;
 import com.example.emobadaragaminglib.Base.Image;
 import com.example.emobadaragaminglib.Base.Screen;
@@ -18,7 +20,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AndroidGame {
+public class MainAppActivity extends AndroidGame {
+
+    public static MediaPlayer Losingsound;
+    public static MediaPlayer Winningsound;
+
     @Override
     public Screen getInitScreen() {
         //Initialize the assets you will be working with on your screens here.
@@ -65,7 +71,10 @@ public class MainActivity extends AndroidGame {
         drawing.again=getGraphics().newImage(R.drawable.again,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.check=getGraphics().newImage(R.drawable.black,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.no_color=getGraphics().newImage(R.drawable.no_color,Graphics.ImageFormat.ARGB8888,getResources());
-        //The method is going to
+        // Audio modules imported :
+        Losingsound = moblibAudioFileManager.getRandomAudioFile(this,"encouragement","AR");
+        Winningsound = moblibAudioFileManager.getRandomAudioFile(this,"good","AR");
+        // The method is going to
         return new MainScreen(this);
 
     }
@@ -82,13 +91,13 @@ public class MainActivity extends AndroidGame {
     }
 }/*
 
-public class MainActivity extends AppCompatActivity {
+public class MainAppActivity extends AppCompatActivity {
     private PaintView paintView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_app_main);
         paintView=(PaintView) findViewById(R.id.paintView);
         DisplayMetrics metrics =  new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);

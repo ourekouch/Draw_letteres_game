@@ -1,1 +1,1 @@
-include ':app', ':audiomod'
+include ':app', ':audiomod', ':audioManagingModule'

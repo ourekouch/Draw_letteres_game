@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.rick.dummygame.R;
-import com.example.rick.dummygame.assets.lettre;
 
 public class choisir_lettre extends AppCompatActivity {
     Button[] lettres;
@@ -28,7 +27,7 @@ public class choisir_lettre extends AppCompatActivity {
 
                 @Override
                 public void onClick(View view) {
-                Intent intent = new Intent(choisir_lettre.this,MainActivity.class);
+                Intent intent = new Intent(choisir_lettre.this,MainAppActivity.class);
                 Bundle b = new Bundle();
                 b.putString("lettre", mylettre); //Your id
                     intent.putExtras(b); //Put your id to your next Intent
@@ -37,7 +36,7 @@ public class choisir_lettre extends AppCompatActivity {
             });}
         }
     public void start(View view) {
-        Intent i = new Intent(this,MainActivity.class);
+        Intent i = new Intent(this,MainAppActivity.class);
         startActivity(i);
     }
 }

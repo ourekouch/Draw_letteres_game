@@ -21,6 +21,8 @@ import com.example.rick.dummygame.assets.Obstacles;
 import com.example.rick.dummygame.assets.drawing;
 import com.example.rick.dummygame.assets.lettre;
 
+import static com.example.rick.dummygame.State.MainAppActivity.Losingsound;
+import static com.example.rick.dummygame.State.MainAppActivity.Winningsound;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
@@ -560,10 +562,12 @@ public class MainScreen extends Screen {
             if ((Validate.contain(x, y))) {
                 if (cp == 10) {
                     valider bravo;
+                    try{Winningsound.start();}catch(Exception e){Log.d("Error", "audio file is missing");}
                     bravo = new valider(game, drawing.bravo, (game.getScreenWidth() / 9) * 3, (game.getScreenHeight() / 6) * 2, 500, 500);
                     addSprite(bravo);
                 } else {
                     valider again;
+                    try{Losingsound.start();}catch(Exception e){Log.d("Error", "audio file is missing");}
                     again = new valider(game, drawing.again, (game.getScreenWidth() / 9) * 3, (game.getScreenHeight() / 6) * 2, 500, 500);
                     addSprite(again);
                 }

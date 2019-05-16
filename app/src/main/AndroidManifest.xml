@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".State.MainActivity" />
+        <activity android:name=".State.MainAppActivity" />
         <activity android:name=".State.choisir_lettre"></activity>
     </application>
 
