@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/audioManagingModule/audioManagingModule.iml" filepath="$PROJECT_DIR$/audioManagingModule/audioManagingModule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/audiomod/audiomod.iml" filepath="$PROJECT_DIR$/audiomod/audiomod.iml" />
       <module fileurl="file://$PROJECT_DIR$/game.iml" filepath="$PROJECT_DIR$/game.iml" />
     </modules>
   </component>
