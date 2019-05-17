@@ -504,7 +504,7 @@ public class MainScreen extends Screen {
         ch = new chemin[10];
         places=getparcour(lettre);
         for(int i =0;i<10;i++){
-                ch[i] = new chemin(game,drawing.check, places[i][0],places[i][1], 150, 150);
+                ch[i] = new chemin(game,drawing.no_color, places[i][0],places[i][1], 150, 150);
                 addSprite(ch[i]);
         }
     }
