@@ -18,7 +18,7 @@ public class Loading_Activity extends AppCompatActivity {
     }
 
     public void start(View view) {
-        Intent i = new Intent(this,choisir_lettre.class);
+        Intent i = new Intent(this,Choisir_langue.class);
         startActivity(i);
     }
 

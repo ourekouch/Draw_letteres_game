@@ -10,6 +10,7 @@ public class drawing {
         public static Image bravo;
         public static Image again;
         public static Image check;
+        public static Image help;
         public static Image no_color;
 
 

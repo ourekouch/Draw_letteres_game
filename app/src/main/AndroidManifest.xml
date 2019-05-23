@@ -10,8 +10,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".State.Loading_Activity">
@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".State.MainAppActivity" />
-        <activity android:name=".State.choisir_lettre"></activity>
+        <activity android:name=".State.choisir_lettre_fr" />
+        <activity android:name=".State.choisir_lettre_am" />
+        <activity android:name=".State.Choisir_langue"></activity>
     </application>
 
 </manifest>

@@ -68,6 +68,7 @@ public class MainAppActivity extends AndroidGame {
         drawing.validate=getGraphics().newImage(R.drawable.valider,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.background=getGraphics().newImage(R.drawable.bckg,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.bravo=getGraphics().newImage(R.drawable.bravo,Graphics.ImageFormat.ARGB8888,getResources());
+        drawing.help=getGraphics().newImage(R.drawable.help,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.again=getGraphics().newImage(R.drawable.again,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.check=getGraphics().newImage(R.drawable.black,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.no_color=getGraphics().newImage(R.drawable.no_color,Graphics.ImageFormat.ARGB8888,getResources());

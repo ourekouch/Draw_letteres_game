@@ -28,12 +28,14 @@ import static java.lang.Math.sqrt;
 
 public class MainScreen extends Screen {
     private final String TAG = "MainScreen: ";
+    public static int help=0;
     //private Rick rick;
     //private Morty morty;
     private pen lettre;
     private chemin[] ch;
     private chemin testc;
     private valider Validate;
+    private valider Help;
     private valider Reset;
     private valider Bckg;
     private int mX;
@@ -381,18 +383,18 @@ public class MainScreen extends Screen {
                 places[9] = move(places[8][0], places[8][1], 15, 40);
                 break;
             case "t":
-                places[0][0] = 2*game.getScreenWidth() / 4  ;
-                places[0][1] = game.getScreenHeight() / 8 + offset/3;
-                places[1] = move(places[0][0], places[0][1], 5, 13);
-                places[2] = move(places[1][0], places[1][1], 5, 13);
-                places[3] = move(places[2][0], places[2][1], 5, 13);
-                places[4] = move(places[3][0], places[3][1], 5, 13);
+                places[4][0] = 2*game.getScreenWidth() / 4  ;
+                places[4][1] = game.getScreenHeight() / 8 + offset/3;
                 places[5] = move(places[4][0], places[4][1], 5, 13);
-                places[6][0] = game.getScreenWidth() / 3  - offset/4;
-                places[6][1] = game.getScreenHeight() / 8 + offset/3;
-                places[7] = move(places[6][0], places[6][1], 3, 15);
-                places[8] = move(places[7][0], places[7][1], 3, 15);
-                places[9] = move(places[8][0], places[8][1], 3, 15);
+                places[6] = move(places[5][0], places[5][1], 5, 13);
+                places[7] = move(places[6][0], places[6][1], 5, 13);
+                places[8] = move(places[7][0], places[7][1], 5, 13);
+                places[9] = move(places[8][0], places[8][1], 5, 13);
+                places[0][0] = game.getScreenWidth() / 3  - offset/4;
+                places[0][1] = game.getScreenHeight() / 8 + offset/3;
+                places[1] = move(places[0][0], places[0][1], 3, 15);
+                places[2] = move(places[1][0], places[1][1], 3, 15);
+                places[3] = move(places[2][0], places[2][1], 3, 15);
                 break;
             case "u":
                 places[0][0] = game.getScreenWidth() / 3  - offset/4;
@@ -494,6 +496,8 @@ public class MainScreen extends Screen {
         addSprite(lettre);
         Validate = new valider(game, drawing.validate, (game.getScreenWidth() / 9) * 1, (game.getScreenHeight() / 6) * 5, 250, 250);
         addSprite(Validate);
+        Help = new valider(game, drawing.help, (game.getScreenWidth() / 9) * 4, (game.getScreenHeight() / 6) * 5, 250, 250);
+        addSprite(Help);
         Reset = new valider(game, drawing.reset, (game.getScreenWidth() / 9) * 6, (game.getScreenHeight() / 6) * 5, 250, 250);
         addSprite(Reset);
         putcheckpoints(MyLettre.choix);
@@ -508,6 +512,7 @@ public class MainScreen extends Screen {
                 addSprite(ch[i]);
         }
     }
+    int  time=0;
     @Override
     public void render(float deltaTime) {
         //With each time you interact with rick, we want to re Render it. Cz one face is just not enough.
@@ -524,6 +529,18 @@ public class MainScreen extends Screen {
             morty.setY(mY);
             myHack=0;
         }*/
+        if (help>0 && help<10){
+            time++;
+            if(time==10) {
+                lettre.setImage((Image) MyLettre.lettres.get(help));
+                help++;
+                time=0;
+            }
+        }
+        if(help==10){
+            lettre.setImage((Image)MyLettre.lettres.get(0));
+            help=0;
+        }
         myHack++;
         //if(rickGotHit()){
         //    Obstacles.voice.play(1);
@@ -562,12 +579,20 @@ public class MainScreen extends Screen {
             if ((Validate.contain(x, y))) {
                 if (cp == 10) {
                     valider bravo;
-                    try{Winningsound.start();}catch(Exception e){Log.d("Error", "audio file is missing");}
+                    try {
+                        Winningsound.start();
+                    } catch (Exception e) {
+                        Log.d("Error", "audio file is missing");
+                    }
                     bravo = new valider(game, drawing.bravo, (game.getScreenWidth() / 9) * 3, (game.getScreenHeight() / 6) * 2, 500, 500);
                     addSprite(bravo);
                 } else {
                     valider again;
-                    try{Losingsound.start();}catch(Exception e){Log.d("Error", "audio file is missing");}
+                    try {
+                        Losingsound.start();
+                    } catch (Exception e) {
+                        Log.d("Error", "audio file is missing");
+                    }
                     again = new valider(game, drawing.again, (game.getScreenWidth() / 9) * 3, (game.getScreenHeight() / 6) * 2, 500, 500);
                     addSprite(again);
                 }
@@ -576,13 +601,11 @@ public class MainScreen extends Screen {
             } else {
                 if ((Reset.contain(x, y))) {
                     game.setScreen(new MainScreen(game));
-                    cp=0;
-                }else{
-                    for(int i =0;i<10;i++){
-                        ch[i].setImage(drawing.validate);
-                    }
-                    for(int i =0;i<10;i++){
-                        ch[i].setImage(drawing.check);
+                    cp = 0;
+                } else {
+                    if ((Help.contain(x, y))) {
+                        help = 1;
+                        cp = 0;
                     }
                 }
             }

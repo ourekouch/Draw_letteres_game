@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".State.choisir_lettre_fr">
+
+    <Button
+        android:id="@+id/tam_z"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵟ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_z6"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/tam_z2"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵡ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tam_z3" />
+
+    <Button
+        android:id="@+id/tam_z3"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵢ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tam_z4" />
+
+    <Button
+        android:id="@+id/tam_z4"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵣ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tam_z5" />
+
+    <Button
+        android:id="@+id/tam_z5"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵥ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tam_z6" />
+
+    <Button
+        android:id="@+id/tam_z6"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵯ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/tam_y"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵜ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_z5"
+        app:layout_constraintEnd_toStartOf="@+id/tam_z" />
+
+    <Button
+        android:id="@+id/tam_x"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵛ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_z4"
+        app:layout_constraintEnd_toStartOf="@+id/tam_y" />
+
+    <Button
+        android:id="@+id/tam_w"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵚ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_z3"
+        app:layout_constraintEnd_toStartOf="@+id/tam_x" />
+
+    <Button
+        android:id="@+id/tam_v"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵙ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_z2"
+        app:layout_constraintEnd_toStartOf="@+id/tam_w" />
+
+    <Button
+        android:id="@+id/tam_u"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵖ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_z"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/tam_p"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵎ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_t"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tam_l"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/tam_o"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵍ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_p"
+        app:layout_constraintTop_toBottomOf="@+id/tam_k" />
+
+    <Button
+        android:id="@+id/tam_n"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵊ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_o"
+        app:layout_constraintTop_toBottomOf="@+id/tam_j" />
+
+    <Button
+        android:id="@+id/tam_t"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵕ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_y"
+        app:layout_constraintEnd_toStartOf="@+id/tam_u"
+        app:layout_constraintTop_toBottomOf="@+id/tam_o"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/tam_s"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵔ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_x"
+        app:layout_constraintEnd_toStartOf="@+id/tam_t" />
+
+    <Button
+        android:id="@+id/tam_r"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵓ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_w"
+        app:layout_constraintEnd_toStartOf="@+id/tam_s"
+        app:layout_constraintTop_toBottomOf="@+id/tam_n"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/tam_q"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵏ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/v"
+        app:layout_constraintEnd_toStartOf="@+id/tam_r"
+        app:layout_constraintTop_toBottomOf="@+id/tam_m"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/tam_m"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵉ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_n"
+        app:layout_constraintTop_toBottomOf="@+id/tam_i" />
+
+    <Button
+        android:id="@+id/tam_l"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵅ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tam_h" />
+
+    <Button
+        android:id="@+id/tam_k"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵄ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_l"
+        app:layout_constraintTop_toBottomOf="@+id/tam_g" />
+
+    <Button
+        android:id="@+id/tam_j"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵃ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tam_m"
+        app:layout_constraintEnd_toStartOf="@+id/tam_k"
+        app:layout_constraintTop_toBottomOf="@+id/tam_f"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/tam_i"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⵀ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_j"
+        app:layout_constraintTop_toBottomOf="@+id/tam_e" />
+
+    <Button
+        android:id="@+id/tam_h"
+        android:layout_width="72dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴽ"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tam_d" />
+
+    <Button
+        android:id="@+id/tam_g"
+        android:layout_width="72dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴼ"
+        android:textColor="@color/colorAccent"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_h"
+        app:layout_constraintTop_toBottomOf="@+id/tam_c" />
+
+    <Button
+        android:id="@+id/tam_f"
+        android:layout_width="72dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴻ"
+        android:textColor="@color/colorAccent"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_g"
+        app:layout_constraintTop_toBottomOf="@+id/tam_b" />
+
+    <Button
+        android:id="@+id/tam_e"
+        android:layout_width="72dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴹ"
+        android:textColor="@color/colorAccent"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_f"
+        app:layout_constraintTop_toBottomOf="@+id/tam_a" />
+
+    <Button
+        android:id="@+id/tam_b"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴱ"
+        android:textColor="@color/colorAccent"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_c"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tam_c"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴳ"
+        android:textColor="@color/colorAccent"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_d"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tam_d"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴷ"
+        android:textColor="@color/colorAccent"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tam_a"
+        android:layout_width="72dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/design_default_color_primary"
+        android:text="ⴰ"
+        android:textColor="@color/colorAccent"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tam_b"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
