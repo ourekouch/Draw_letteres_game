@@ -66,12 +66,13 @@ public class MainAppActivity extends AndroidGame {
         Obstacles.voice = (AndroidSound) getAudio().createSound(R.raw.morty);
         drawing.reset=getGraphics().newImage(R.drawable.repeter,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.validate=getGraphics().newImage(R.drawable.valider,Graphics.ImageFormat.ARGB8888,getResources());
-        drawing.background=getGraphics().newImage(R.drawable.bckg,Graphics.ImageFormat.ARGB8888,getResources());
+        drawing.background=getGraphics().newImage(R.drawable.bckg3,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.bravo=getGraphics().newImage(R.drawable.bravo,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.help=getGraphics().newImage(R.drawable.help,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.again=getGraphics().newImage(R.drawable.again,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.check=getGraphics().newImage(R.drawable.black,Graphics.ImageFormat.ARGB8888,getResources());
         drawing.no_color=getGraphics().newImage(R.drawable.no_color,Graphics.ImageFormat.ARGB8888,getResources());
+        drawing.back=getGraphics().newImage(R.drawable.bck_btn,Graphics.ImageFormat.ARGB8888,getResources());
         // Audio modules imported :
         Losingsound = moblibAudioFileManager.getRandomAudioFile(this,"encouragement","AR");
         Winningsound = moblibAudioFileManager.getRandomAudioFile(this,"good","AR");
