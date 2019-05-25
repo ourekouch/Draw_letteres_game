@@ -551,6 +551,7 @@ public class MainScreen extends Screen {
         }
         if ((back.contain(x, y))) {
             game.getInitScreen();
+            game.setScreen(new MainScreen(game));
             drawing.goback(this, (Context) game);
         }
 
