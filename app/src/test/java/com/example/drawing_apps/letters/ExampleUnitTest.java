@@ -1,4 +1,4 @@
-package com.example.drawnig_apps.letters;
+package com.example.drawing_apps.letters;
 
 import org.junit.Test;
 

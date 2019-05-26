@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+    android:gravity="center_vertical"
+tools:context=".chooseImportOrExportActivity"
+    android:background="@drawable/load_icone">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/audio_file_export_button"
+            style="@style/AppTheme.Button"
+            android:layout_width="364dp"
+            android:layout_height="72dp"
+            android:layout_weight="1"
+            android:background="@drawable/expo"
+            android:clickable="false"
+            android:contentDescription="export"
+            android:theme="@style/AppTheme.Button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/audio_file_import_button"
+            style="@style/AppTheme.Button"
+            android:layout_width="302dp"
+            android:layout_height="124dp"
+            android:layout_weight="1"
+            android:background="@drawable/impo"
+            android:clickable="false"
+            android:contentDescription="import"
+            android:theme="@style/AppTheme.Button" />
+    </LinearLayout>
+
+
+</LinearLayout>

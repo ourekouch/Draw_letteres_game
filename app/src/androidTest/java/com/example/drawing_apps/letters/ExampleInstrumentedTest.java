@@ -1,4 +1,4 @@
-package com.example.drawnig_apps.letters;
+package com.example.drawing_apps.letters;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

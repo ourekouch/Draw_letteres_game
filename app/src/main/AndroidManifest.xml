@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.drawnig_apps.letters">
+    package="com.example.drawing_apps.letters">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,17 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
-        <activity android:name="com.example.drawnig_apps.letters.State.Loading_Activity">
+        <activity android:name="com.example.drawing_apps.letters.State.Loading_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.drawnig_apps.letters.State.MainAppActivity" />
-        <activity android:name="com.example.drawnig_apps.letters.State.choisir_lettre_fr" android:parentActivityName=".State.Choisir_langue"/>
-        <activity android:name="com.example.drawnig_apps.letters.State.choisir_lettre_am" android:parentActivityName=".State.Choisir_langue"/>
-        <activity android:name="com.example.drawnig_apps.letters.State.Choisir_langue" android:parentActivityName=".State.Loading_Activity"></activity>
+        <activity android:name="com.example.drawing_apps.letters.State.MainAppActivity" />
+        <activity android:name="com.example.drawing_apps.letters.State.choisir_lettre_fr" android:parentActivityName="com.example.drawing_apps.letters.State.Choisir_langue"/>
+        <activity android:name="com.example.drawing_apps.letters.State.choisir_lettre_am" android:parentActivityName="com.example.drawing_apps.letters.State.Choisir_langue"/>
+        <activity android:name="com.example.drawing_apps.letters.State.Choisir_langue" android:parentActivityName="com.example.drawing_apps.letters.State.Loading_Activity"></activity>
     </application>
 
 </manifest>
